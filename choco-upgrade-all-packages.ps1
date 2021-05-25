@@ -12,7 +12,7 @@
 #	Created 2020/12/17 John Migas
 ###############################
 $scriptPath = split-path -parent $MyInvocation.MyCommand.Path
-$configFilePath = $scriptPath + "\packages.config"
+$configFilePath = $scriptPath + "/packages.config"
 [xml]$packagesXML = gc $configFilePath
 $packagesXML.packages.package.id | ForEach-Object {
 	if($_ -ne ''){
